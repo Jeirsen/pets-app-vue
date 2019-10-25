@@ -1,21 +1,24 @@
 <template>
   <div>
-    <PetTable species="dogs" :pets="dogs" />
+    <PetTable species="dogs" :pets="getDogs" />
   </div>
 </template>
 
 <script>
 import PetTable from "@/components/PetTable.vue";
-import { mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {};
+  },
+  created() {
+    this.$store.dispatch("loadPets");
   },
   components: {
     PetTable
   },
   computed: {
-    ...mapState(["dogs"])
+    ...mapGetters(["getDogs"])
   }
 };
 </script>

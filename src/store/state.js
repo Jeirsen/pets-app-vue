@@ -1,8 +1,17 @@
-import cats from "../data/cats";
-import dogs from "../data/dogs";
+// import cats from "../data/cats";
+// import dogs from "../data/dogs";
 
 export default {
-  cats,
-  dogs,
-  pets: [...cats, ...dogs]
+  pets: [],
+  newPet: {
+    name: "",
+    breed: "",
+    species: "",
+    gender: "",
+    age: null,
+    color: "",
+    weight: 0,
+    location: "",
+    notes: ""
+  }
 };
